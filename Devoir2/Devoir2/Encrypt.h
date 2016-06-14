@@ -7,12 +7,19 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <istream>
 
 using namespace std;
 
+
+
 class Encrypt{
 public:
+	
 	Encrypt();
-	string encryption(string toEncrypt);
+	
+	string encrypt(string msg, string key);
+	string decrypt(string msg, string key);
 	void mainEncrypt();
 };
