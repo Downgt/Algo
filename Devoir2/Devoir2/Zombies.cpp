@@ -205,51 +205,57 @@ void Zombies::Choice(string fileName){
 	int pos5 = tableauPosition[position5];
 	int pos6 = tableauPosition[position6];
 	int pos7 = tableauPosition[position7];
-	cout << "\nLe jour 1 :\n";
-	cout << "10 h \n";
-	switch (nbTireurs){
-	case 2:
-		displayString(max, pos);
-		displayString(max2, pos2);
-		break;
-	case 3:
-		displayString(max, pos);
-		displayString(max2, pos2);
-		displayString(max3, pos3);
-		break;
-	case 4:
-		displayString(max, pos);
-		displayString(max2, pos2);
-		displayString(max3, pos3);
-		displayString(max4, pos4);
-		break;
-	case 5:
-		displayString(max, pos);
-		displayString(max2, pos2);
-		displayString(max3, pos3);
-		displayString(max4, pos4);
-		displayString(max5, pos5);
-		break;
-	case 6:
-		displayString(max, pos);
-		displayString(max2, pos2);
-		displayString(max3, pos3);
-		displayString(max4, pos4);
-		displayString(max5, pos5);
-		displayString(max6, pos6);
-		break;
-	case 7:
-		displayString(max, pos);
-		displayString(max2, pos2);
-		displayString(max3, pos3);
-		displayString(max4, pos4);
-		displayString(max5, pos5);
-		displayString(max6, pos6);
-		displayString(max7, pos7);
-		break;
-	default:
-		break;
+	for (int i = 1; i <= 7; i++){
+		for (int j = 10; i <= 18; i++){
+			cout << "\nLe jour " << i << " :\n";
+			cout << j << " h \n";
+			switch (nbTireurs){
+			case 2:
+				displayString(max, pos);
+				displayString(max2, pos2);
+				break;
+			case 3:
+				displayString(max, pos);
+				displayString(max2, pos2);
+				displayString(max3, pos3);
+				break;
+			case 4:
+				displayString(max, pos);
+				displayString(max2, pos2);
+				displayString(max3, pos3);
+				displayString(max4, pos4);
+				break;
+			case 5:
+				displayString(max, pos);
+				displayString(max2, pos2);
+				displayString(max3, pos3);
+				displayString(max4, pos4);
+				displayString(max5, pos5);
+				break;
+			case 6:
+				displayString(max, pos);
+				displayString(max2, pos2);
+				displayString(max3, pos3);
+				displayString(max4, pos4);
+				displayString(max5, pos5);
+				displayString(max6, pos6);
+				break;
+			case 7:
+				displayString(max, pos);
+				displayString(max2, pos2);
+				displayString(max3, pos3);
+				displayString(max4, pos4);
+				displayString(max5, pos5);
+				displayString(max6, pos6);
+				displayString(max7, pos7);
+				break;
+			default:
+				break;
+			}
+		}
+		
 	}
+	
 
 
 
