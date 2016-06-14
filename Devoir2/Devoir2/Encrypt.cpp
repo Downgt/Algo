@@ -8,7 +8,7 @@ Encrypt::Encrypt(){
 
 string Encrypt::encrypt(string msg, string key)
 {
-	
+
 	string output = msg;
 
 	for (int i = 0; i < msg.size(); i++)
@@ -18,7 +18,7 @@ string Encrypt::encrypt(string msg, string key)
 }
 string Encrypt::decrypt(string msg, string key)
 {
-	return encrypt(msg, key); 
+	return encrypt(msg, key);
 }
 
 void Encrypt::mainEncrypt()

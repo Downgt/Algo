@@ -1,8 +1,8 @@
 #define MAX 38
 
 typedef struct {
-	int index;          
-	bool approched;  
+	int index;
+	bool approched;
 	double fullDistance;
 } Status;
 
@@ -19,14 +19,14 @@ struct Distance {
 class TSP
 {
 public:
-	TSP(); 
+	TSP();
 	void setProblem(Problem problem);
 	void setMatrix();
 	void sortMatrix();
 	void findNeighbour(int city);
 
 private:
-	Problem problem; 
+	Problem problem;
 	Status statusList[MAX];
 	double oldMatrix[MAX][MAX];
 
