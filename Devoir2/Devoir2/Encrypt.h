@@ -9,16 +9,16 @@
 #include <algorithm>
 #include <iostream>
 #include <istream>
-
+#include <conio.h>
+#include <Windows.h>
 using namespace std;
 
 
 
 class Encrypt{
 public:
-	
 	Encrypt();
-	
+	void SetClipboard(const char *);
 	string encrypt(string msg, string key);
 	string decrypt(string msg, string key);
 	void mainEncrypt();
