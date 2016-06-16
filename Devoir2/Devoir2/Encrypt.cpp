@@ -14,7 +14,6 @@ string Encrypt::encrypt(string msg, string key)
 	while (key.size() < msg.size())
 		key += tmp;
 
-	// And now for the encryption part
 	for (string::size_type i = 0; i < msg.size(); ++i)
 		msg[i] ^= key[i];
 	return msg;
