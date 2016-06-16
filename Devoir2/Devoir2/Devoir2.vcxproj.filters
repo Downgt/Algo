@@ -30,19 +30,54 @@
     <ClCompile Include="Encrypt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Zombies.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RSA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CityPlay.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="TSP.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Problem.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TSP.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Encrypt.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CityPlay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombies.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RSA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="FichiersTest\T_3_20.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FichiersTest\T_4_20.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FichiersTest\T_5_30.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FichiersTest\T_7_30.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FichiersTest\ville.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FichiersTest\T_2_5.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="FichiersTest\T_2_10.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

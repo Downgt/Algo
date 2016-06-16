@@ -68,13 +68,26 @@
     <ClCompile Include="Encrypt.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Problem.cpp" />
+    <ClCompile Include="RSA.cpp" />
     <ClCompile Include="TSP.cpp" />
+    <ClCompile Include="Zombies.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CityPlay.h" />
     <ClInclude Include="Encrypt.h" />
     <ClInclude Include="Problem.h" />
+    <ClInclude Include="RSA.h" />
     <ClInclude Include="TSP.h" />
+    <ClInclude Include="Zombies.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="FichiersTest\T_2_10.txt" />
+    <Text Include="FichiersTest\T_2_5.txt" />
+    <Text Include="FichiersTest\T_3_20.txt" />
+    <Text Include="FichiersTest\T_4_20.txt" />
+    <Text Include="FichiersTest\T_5_30.txt" />
+    <Text Include="FichiersTest\T_7_30.txt" />
+    <Text Include="FichiersTest\ville.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
