@@ -26,12 +26,12 @@ void Caesar::mainCaesar(){
 
 char Caesar::encryption(char c){
 
-		c = (((c - 10) + 5) + 22) + 10;
+		c = c - 10;
 	return c;
 }
 
 char Caesar::decryption(char c){
 
-		c = (((c + 10) - 5) - 22) - 10;
+		c = c + 10;
 	return c;
 }
