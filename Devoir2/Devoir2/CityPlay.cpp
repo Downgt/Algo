@@ -22,6 +22,4 @@ void CityPlay::mainCityPlay()
 	for (int i = 1; i < 38; i++){
 		tsp.findNeighbour(i);
 	}
-
-
 }
