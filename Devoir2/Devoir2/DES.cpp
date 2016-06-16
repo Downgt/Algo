@@ -1,5 +1,19 @@
 #include "DES.h"
 
+
+int key[64] =
+{
+	0, 0, 0, 1, 0, 0, 1, 1,
+	0, 0, 1, 1, 0, 1, 0, 0,
+	0, 1, 0, 1, 0, 1, 1, 1,
+	0, 1, 1, 1, 1, 0, 0, 1,
+	1, 0, 0, 1, 1, 0, 1, 1,
+	1, 0, 1, 1, 1, 1, 0, 0,
+	1, 1, 0, 1, 1, 1, 1, 1,
+	1, 1, 1, 1, 0, 0, 0, 1
+};
+
+
 DES::DES(){
 	mainDES();
 }
@@ -352,7 +366,7 @@ char * DES::Encrypt(char *Text1)
 {
 	int i, a1, j, nB, m, iB, k, K, B[8], n, t, d, round;
 	char *Text = new char[1000];
-	strcpy(Text, Text1);
+	strcpy_s(Text,sizeof Text, Text1);
 	i = strlen(Text);
 	int mc = 0;
 	a1 = i % 8;
@@ -414,7 +428,7 @@ char * DES::Decrypt(char *Text1)
 	int i, a1, j, nB, m, iB, k, K, B[8], n, t, d, round;
 	char *Text = new char[1000];
 	unsigned char ch;
-	strcpy(Text, Text1);
+	strcpy_s(Text,sizeof Text, Text1);
 	i = strlen(Text);
 	keygen();
 	int mc = 0;
@@ -477,10 +491,47 @@ void DES::mainDES()
 	DES d1, d2;
 	char *str = new char[1000];
 	char *str1 = new char[1000];
-	cout << "Enter a string : ";
+	cout << "Message : ";
 	cin >> str;
 	str1 = d1.Encrypt(str);
-	cout << "\ni/p Text: " << str << endl;
-	cout << "\nCypher  : " << str1 << endl;
-	cout << "\no/p Text: " << d2.Decrypt(str1) << endl;
+	cout << "\no/p Message decrypte: " << d2.Decrypt(str1) << endl;
+}
+void DES::keygen()
+{
+	PermChoice1();
+
+	int i, j, k = 0;
+	for (i = 0; i < 28; i++)
+	{
+		ck[i] = pc1[i];
+	}
+	for (i = 28; i < 56; i++)
+	{
+		dk[k] = pc1[i];
+		k++;
+	}
+	int noshift = 0, round;
+	for (round = 1; round <= 16; round++)
+	{
+		if (round == 1 || round == 2 || round == 9 || round == 16)
+			noshift = 1;
+		else
+			noshift = 2;
+		while (noshift > 0)
+		{
+			int t;
+			t = ck[0];
+			for (i = 0; i < 28; i++)
+				ck[i] = ck[i + 1];
+			ck[27] = t;
+			t = dk[0];
+			for (i = 0; i < 28; i++)
+				dk[i] = dk[i + 1];
+			dk[27] = t;
+			noshift--;
+		}
+		PermChoice2();
+		for (i = 0; i < 48; i++)
+			keyi[round - 1][i] = z[i];
+	}
 }

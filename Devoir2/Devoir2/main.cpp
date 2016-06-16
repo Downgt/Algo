@@ -1,6 +1,8 @@
 #include "Zombies.h"
 #include "CityPlay.h"
-#include "Encrypt.h"
+#include "XOR.h"
+#include "DES.h"
+#include "RSA.h"
 
 
 int main()
@@ -24,7 +26,7 @@ int main()
 
 		break;
 	case 3:
-		Encrypt();
+		DES();
 		break;
 
 	default:

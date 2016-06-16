@@ -1,13 +1,13 @@
-#include "Encrypt.h"
+#include "XOR.h"
 
 
-Encrypt::Encrypt(){
+XOR::XOR(){
 
-	mainEncrypt();
+	mainXOR();
 
 }
 
-string Encrypt::encrypt(string msg, string key)
+string XOR::encrypt(string msg, string key)
 {
 	
 	string tmp(key);
@@ -18,12 +18,12 @@ string Encrypt::encrypt(string msg, string key)
 		msg[i] ^= key[i];
 	return msg;
 }
-string Encrypt::decrypt(string msg, string key)
+string XOR::decrypt(string msg, string key)
 {
 	return encrypt(msg, key);
 }
 
-void Encrypt::mainEncrypt()
+void XOR::mainXOR()
 {
 
 	cout << "Choix de l'encryption\n";
@@ -71,7 +71,7 @@ void Encrypt::mainEncrypt()
 
 }
 
-void Encrypt::SetClipboard(const char *output)
+void XOR::SetClipboard(const char *output)
 {
 	const size_t len = strlen(output) + 1;
 	HGLOBAL hMem = GlobalAlloc(GMEM_MOVEABLE, len);

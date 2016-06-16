@@ -1,5 +1,9 @@
 #include "RSA.h"
 
+
+long int p, q, n, t, flag, e[100], d[100], temp[100], j, m[100], en[100], i;
+char msg[100];
+
 RSA::RSA(){
 	mainRSA();
 }

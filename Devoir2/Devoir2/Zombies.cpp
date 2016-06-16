@@ -119,24 +119,30 @@ void Zombies::Choice(string fileName){
 	int position7 = 0;
 
 
+
 	int dist = getDist();
 
 
-	for (int i = 0; i<size / 2 - 1; i++)
-	{
-		if (tableauProbabilite[i] > max){
-			max = tableauProbabilite[i];
-			position = +i;
+	/*	for (int jour = 1; jour <= 10; jour++){
+			for (int heure = 10; heure <= 18; heure++){
 
-		}
+			cout << "\nLe jour " << jour << " :\n";
+			cout << heure << " h \n";
+			*/
+	PositionMax pm = getMaxPosition(size, tableauProbabilite, max, position);
 
-
-
-
-	}
+	max = pm.m;
+	position = pm.p;
 
 	wetherRandom(position, tableauProbabilite, size);
 
+	/*
+
+	if (tableauProbabilite[i]<tableauProbabiliteInitial[i]
+
+
+
+	*/
 
 	for (int i = 0; i < size / 2 - 1; i++)
 	{
@@ -196,67 +202,57 @@ void Zombies::Choice(string fileName){
 	}
 	wetherRandom(position7, tableauProbabilite, size);
 
-
 	int pos = tableauPosition[position];
-
 	int pos2 = tableauPosition[position2];
 	int pos3 = tableauPosition[position3];
 	int pos4 = tableauPosition[position4];
 	int pos5 = tableauPosition[position5];
 	int pos6 = tableauPosition[position6];
 	int pos7 = tableauPosition[position7];
-	for (int i = 1; i <= 7; i++){
-		for (int j = 10; i <= 18; i++){
-			cout << "\nLe jour " << i << " :\n";
-			cout << j << " h \n";
-			switch (nbTireurs){
-			case 2:
-				displayString(max, pos);
-				displayString(max2, pos2);
-				break;
-			case 3:
-				displayString(max, pos);
-				displayString(max2, pos2);
-				displayString(max3, pos3);
-				break;
-			case 4:
-				displayString(max, pos);
-				displayString(max2, pos2);
-				displayString(max3, pos3);
-				displayString(max4, pos4);
-				break;
-			case 5:
-				displayString(max, pos);
-				displayString(max2, pos2);
-				displayString(max3, pos3);
-				displayString(max4, pos4);
-				displayString(max5, pos5);
-				break;
-			case 6:
-				displayString(max, pos);
-				displayString(max2, pos2);
-				displayString(max3, pos3);
-				displayString(max4, pos4);
-				displayString(max5, pos5);
-				displayString(max6, pos6);
-				break;
-			case 7:
-				displayString(max, pos);
-				displayString(max2, pos2);
-				displayString(max3, pos3);
-				displayString(max4, pos4);
-				displayString(max5, pos5);
-				displayString(max6, pos6);
-				displayString(max7, pos7);
-				break;
-			default:
-				break;
-			}
-		}
-		
-	}
-	
 
+	switch (nbTireurs){
+	case 2:
+		displayString(max, pos);
+		displayString(max2, pos2);
+		break;
+	case 3:
+		displayString(max, pos);
+		displayString(max2, pos2);
+		displayString(max3, pos3);
+		break;
+	case 4:
+		displayString(max, pos);
+		displayString(max2, pos2);
+		displayString(max3, pos3);
+		displayString(max4, pos4);
+		break;
+	case 5:
+		displayString(max, pos);
+		displayString(max2, pos2);
+		displayString(max3, pos3);
+		displayString(max4, pos4);
+		displayString(max5, pos5);
+		break;
+	case 6:
+		displayString(max, pos);
+		displayString(max2, pos2);
+		displayString(max3, pos3);
+		displayString(max4, pos4);
+		displayString(max5, pos5);
+		displayString(max6, pos6);
+		break;
+	case 7:
+		displayString(max, pos);
+		displayString(max2, pos2);
+		displayString(max3, pos3);
+		displayString(max4, pos4);
+		displayString(max5, pos5);
+		displayString(max6, pos6);
+		displayString(max7, pos7);
+		break;
+	default:
+		break;
+	}
 
 
 	delete[]tableauPosition;
@@ -312,7 +308,7 @@ void Zombies::wetherRandom(double position, double tableauProbabilite[], int siz
 		{
 			tableauProbabilite[(int)position + 1] = tableauProbabilite[(int)position + 1] + randomPositive*tableauProbabilite[(int)position + 1] / 100;
 		}
-		if (position == size / 2 - 1)
+		else if (position == size / 2 - 1)
 		{
 			tableauProbabilite[(int)position - 1] = tableauProbabilite[(int)position - 1] + randomPositive*tableauProbabilite[(int)position - 1] / 100;
 		}
@@ -323,13 +319,13 @@ void Zombies::wetherRandom(double position, double tableauProbabilite[], int siz
 		}
 
 	}
-	else if (meteo >= 0)
+	else
 	{
 		if (position == 0)
 		{
 			tableauProbabilite[1] = tableauProbabilite[1] + randomNegative*tableauProbabilite[1] / 100;
 		}
-		if (position == size / 2 - 1)
+		else if (position == size / 2 - 1)
 		{
 			tableauProbabilite[(int)position - 1] = tableauProbabilite[(int)position - 1] + randomNegative*tableauProbabilite[(int)position - 1] / 100;
 		}
@@ -339,4 +335,22 @@ void Zombies::wetherRandom(double position, double tableauProbabilite[], int siz
 			tableauProbabilite[(int)position + 1] = tableauProbabilite[(int)position + 1] + randomNegative*tableauProbabilite[(int)position + 1] / 100;
 		}
 	}
+}
+
+
+PositionMax Zombies::getMaxPosition(int size, double tableauProbabilite[], int max, int position){
+
+	PositionMax pm;
+
+	for (int i = 0; i<size / 2 - 1; i++)
+	{
+		if (tableauProbabilite[i] > max){
+			max = tableauProbabilite[i];
+			position = +i;
+		}
+	}
+	pm.m = max;
+	pm.p = position;
+
+	return pm;
 }

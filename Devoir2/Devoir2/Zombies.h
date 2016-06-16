@@ -9,6 +9,12 @@
 
 using namespace std;
 
+struct PositionMax
+{
+	int m;
+	int p;
+};
+
 class Zombies{
 public:
 	Zombies();
@@ -16,7 +22,8 @@ public:
 	void displayFile(string fileName);
 	void Choice(string fileName);
 	void displayString(double proba, int pos);
-	int getDist();
-	void wetherRandom(double position, double tableauProbabilite[], int size);
+	static int getDist();
+	static void wetherRandom(double position, double tableauProbabilite[], int size);
+	PositionMax getMaxPosition(int size, double tableauProbabilite[], int max, int position);
 };
 
