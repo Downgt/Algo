@@ -13,12 +13,10 @@
 using namespace std;
 
 
-
-class XOR{
+class Caesar{
 public:
-	XOR();
-	void SetClipboard(const char *);
-	string encrypt(string msg, string key);
-	string decrypt(string msg, string key);
-	void mainXOR();
+	Caesar();
+	void mainCaesar();
+	char encryption(char c);
+	char decryption(char c);
 };

@@ -13,12 +13,11 @@
 using namespace std;
 
 
-
-class XOR{
-public:
-	XOR();
-	void SetClipboard(const char *);
-	string encrypt(string msg, string key);
-	string decrypt(string msg, string key);
-	void mainXOR();
+class Vigenere{
+public :
+	Vigenere();
+	void mainVigenere();
+	string encryption(string text, string cle);
+	string decryption(string text, string cle);
+	string gestionCle(string cle);
 };

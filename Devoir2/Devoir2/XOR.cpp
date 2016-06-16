@@ -9,13 +9,8 @@ XOR::XOR(){
 
 string XOR::encrypt(string msg, string key)
 {
-	
-	string tmp(key);
-	while (key.size() < msg.size())
-		key += tmp;
-
 	for (string::size_type i = 0; i < msg.size(); ++i)
-		msg[i] ^= key[i];
+		msg[i] = msg[i] ^ key[i % (sizeof(key) / sizeof(char))];
 	return msg;
 }
 string XOR::decrypt(string msg, string key)
@@ -44,7 +39,6 @@ void XOR::mainXOR()
 		string message = encrypt(messageEncrypt, "noel");
 		cout << "Message encrypte : " << message << "\n";
 		const char *cstr = message.c_str();
-		cout << cstr;
 		SetClipboard(cstr);
 		break;
 
@@ -63,12 +57,6 @@ void XOR::mainXOR()
 	default:
 		break;
 	}
-
-	
-	
-	
-	
-
 }
 
 void XOR::SetClipboard(const char *output)
