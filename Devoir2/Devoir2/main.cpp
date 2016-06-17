@@ -1,8 +1,6 @@
 #include "Question.h"
 #include "Question5.h"
-#include "XOR.h"
-#include "Vigenere.h"
-#include "Caesar.h"
+#include "Question6.h"
 
 
 int main()
@@ -25,36 +23,18 @@ int main()
 		Zombies();
 		break;
 	case 2:
-
-		CityPlay();
-
-		break;
-	case 3:{
-		int a;
-		cout << "\nAlgorithme de l'encryption : \n"
-			<< "1 - XOR\n"
-			<< "2 - Vigenere\n"
-			<< "3 - Caesar\n";
-		cin >> a;
-
-		switch (a)
-		{
-		case 1 :
-			XOR();
-			break;
-		case 2 :
-			Vigenere();
-			break;
-		case 3:
-			Caesar();
-		default:
-			break;
-		}
-		break;
-
-	}
 		
-
+		break;
+	case 3:
+		break;
+	case 4:
+		break;
+	case 5:
+		Question5();
+		break;
+	case 6:
+		Question6();
+		break;
 	default:
 		break;
 	}

@@ -1,6 +1,6 @@
-class CityPlay
+class Question5
 {
 public:
-	CityPlay();
-	void mainCityPlay();
+	Question5();
+	void mainQuestion5();
 };

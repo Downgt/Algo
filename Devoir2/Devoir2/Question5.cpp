@@ -4,12 +4,12 @@
 #include <iostream>
 using namespace std;
 
-CityPlay::CityPlay()
+Question5::Question5()
 {
-	mainCityPlay();
+	mainQuestion5();
 }
 
-void CityPlay::mainCityPlay()
+void Question5::mainQuestion5()
 {
 	Problem problem;
 	problem.read();
