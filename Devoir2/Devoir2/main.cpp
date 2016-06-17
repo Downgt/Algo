@@ -1,8 +1,6 @@
-#include "Zombies.h"
-#include "CityPlay.h"
+#include "Question.h"
+#include "Question5.h"
 #include "XOR.h"
-#include "DES.h"
-#include "RSA.h"
 #include "Vigenere.h"
 #include "Caesar.h"
 
@@ -10,11 +8,15 @@
 int main()
 {
 
+
 	int x;
 	cout << "Choix de l'exercice :\n"
-		<< "1 - Zombies\n"
-		<< "2 - Villes\n"
-		<< "3 - Encryption\n";
+		<< "1 - Question 1\n"
+		<< "2 - Question 2\n"
+		<< "3 - Question 3\n"
+		<< "4 - Question 4\n"
+		<< "5 - Question 5\n"
+		<< "6 - Question 6\n";
 	cin >> x;
 
 	switch (x)
